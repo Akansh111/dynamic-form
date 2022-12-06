@@ -1,0 +1,124 @@
+import { set } from 'lodash-es';
+import { memo, useMemo, useState } from 'react';
+import ConvertNodeToTags from '../../1_molecules/convertNodeToTags';
+import useStyles from '../hooks/useStyles';
+import { useServerData } from '../store/useServerData';
+import { INode, ISubNode } from '../types/dataType';
+
+function InputField({ node, nodePath }: { node: ISubNode; nodePath: { obj: object; path: string } }) {
+  const { styleClassNames, styleInString } = useStyles({ node });
+  const setServerData = useServerData((state) => state.setServerData);
+  // const setUniqueIdStore = useUniqueIdStore((state) => state.setUniqueIdStore);
+
+  const [data, setData] = useState({
+    value: `${node.data?.value ? node.data?.value : ''}`,
+  });
+
+  const inputType = useMemo(() => {
+    if (node?.type) {
+      switch (node.type) {
+        case 'valueNode':
+          return 'text';
+        case 'Number':
+          return 'number';
+        default:
+          return node.type.toLowerCase();
+      }
+    } else {
+      return 'text';
+    }
+  }, [node?.type]);
+
+  const tag = useMemo(() => {
+    let tag = 'input';
+    if (
+      node?.type === 'textarea' ||
+      node?.type === 'select' ||
+      node?.type === 'option' ||
+      node?.type === 'optgroup' ||
+      node?.type === 'datalist' ||
+      node?.type === 'output' ||
+      node?.type === 'fieldset'
+    ) {
+      tag = node?.type.toLowerCase();
+    }
+    return tag;
+  }, [node.type]);
+
+  const otherInputProps = useMemo(() => {
+    // removing unnecessary props
+    const props = JSON.parse(JSON.stringify(node)) || {};
+
+    delete props.appearanceIndex;
+    delete props.type;
+    // delete props.label;
+    delete props.style;
+    delete props.placeHolderText;
+    delete props.readOnly;
+    delete props.data;
+
+    if (tag !== 'input' && tag !== 'textarea') {
+      props['children'] =
+        (node.childNodes &&
+          node.childNodes.length > 0 &&
+          node.childNodes.map((childNode: INode, key: number) => (
+            <ConvertNodeToTags
+              nodeData={childNode}
+              nodePath={{
+                obj: nodePath.obj,
+                path: `${nodePath.path}.node.childNodes[${key}]`,
+              }}
+              key={key}
+            />
+          ))) ||
+        data?.value;
+    }
+
+    return props;
+  }, [data?.value, node, nodePath.obj, nodePath.path, tag]);
+
+  const CustomHtmlTag = `${tag}` as keyof JSX.IntrinsicElements;
+
+  const isLabelImp = useMemo(() => {
+    return node?.type === 'checkbox' || node?.type === 'radio';
+  }, [node.type]);
+
+  return (
+    <div className={`transition-all ${!isLabelImp ? 'flex flex-col' : ''}`}>
+      {
+        <style jsx>{`
+          input {
+            ${styleInString}
+          }
+          label {
+            ${styleInString}
+          }
+        `}</style>
+      }
+
+      {node?.label && !isLabelImp && <label htmlFor={`${node.id}`}>{node.label}</label>}
+
+      <CustomHtmlTag
+        {...otherInputProps}
+        id={`${node.id}`}
+        className={`${styleClassNames}`}
+        placeholder={node.placeHolderText || node.label}
+        style={node.style}
+        type={inputType}
+        value={data.value}
+        onChange={(e: { target: { value: string } }) => {
+          setData({ value: e.target.value });
+          setServerData(set(nodePath.obj, `${nodePath.path}.node.data.value`, e.target.value));
+        }}
+      />
+
+      {node?.label && isLabelImp && (
+        <label className='select-none' htmlFor={`${node.id}`}>
+          {node.label}
+        </label>
+      )}
+    </div>
+  );
+}
+
+export default memo(InputField);
