@@ -347,12 +347,63 @@ export const newJSON = {
             node: {
               appearanceIndex: '2',
               id: '6a65sfd465a4sd',
+              type: 'valueNode',
+              label: 'Enter your Name (min 3 and max 30 characters only)',
+              placeHolderText: 'e.g. Akansh Goel',
+              minLength: '3',
+              maxLength: '30',
+              errorLabel: 'Please enter a valid name',
+              readOnly: 'false',
+              required: 'true',
+              style: {
+                'Bold ': 'false',
+                'Italic ': 'false',
+                underline: 'false',
+                fontSize: '14',
+                fontName: 'Times New Roman',
+                cssStyle: 'None',
+              },
+              data: {
+                value: '',
+              },
+            },
+          },
+          {
+            node: {
+              appearanceIndex: '2',
+              id: 'q87ewr98qw7er987q9we',
+              type: 'Date',
+              label: 'Date of Birth (min 1980-01-01 and max 2002-01-01)',
+              format: 'dd-mm-yyyy',
+              readOnly: 'false',
+              required: 'true',
+              min: '1980-01-01',
+              max: '2002-01-01',
+              errorLabel: 'Please enter a valid date',
+              style: {
+                'Bold ': 'false',
+                'Italic ': 'false',
+                fontSize: '14',
+                fontName: 'Times New Roman',
+                cssStyle: 'None',
+              },
+              data: {
+                value: '1950-01-01',
+              },
+            },
+          },
+          {
+            node: {
+              appearanceIndex: '2',
+              id: '6a65sfd465a4sd',
               type: 'Number',
               label: 'Enter Number from 1 to 10 (this range only works on form submit)',
               min: '1',
               max: '10',
               placeHolderText: 'Number Please',
               readOnly: 'false',
+              required: 'true',
+              errorLabel: 'Please enter a valid number',
               style: {
                 'Bold ': 'false',
                 'Italic ': 'false',
@@ -363,6 +414,45 @@ export const newJSON = {
               },
               data: {
                 value: ' ',
+              },
+            },
+          },
+          {
+            node: {
+              appearanceIndex: '2',
+              id: 'submitButton1label',
+              type: 'customTag-label',
+              label: '',
+              placeHolderText: '',
+              readOnly: 'false',
+              htmlFor: 'submitButton1',
+              style: {
+                fontName: 'Times New Roman',
+              },
+              data: {
+                value: 'Click below Button (or me) to see validation',
+              },
+            },
+          },
+          {
+            node: {
+              appearanceIndex: '2',
+              id: 'submitButton1',
+              type: 'submit',
+              label: '',
+              placeHolderText: '',
+              readOnly: 'false',
+              style: {
+                'background-color': '#d97700',
+                color: '#ffffff',
+                margin: '0.5rem auto',
+                padding: '2px 8px',
+                'font-size': '1.2rem',
+                'border-radius': '8px',
+                cursor: 'pointer',
+              },
+              data: {
+                value: 'Submit Button',
               },
             },
           },
@@ -628,7 +718,7 @@ export const newJSON = {
             node: {
               appearanceIndex: '2',
               id: 'asdsdafasd',
-              type: 'customTag-h1',
+              type: 'customTag-button',
               label: 'asdfasdf',
               readOnly: 'false',
               style: {

@@ -25,6 +25,7 @@ export interface ISubNode {
   groupLabel?: string;
   minLength?: string;
   maxLength?: string;
+  errorLabel?: string;
   placeHolderText?: string;
   childNodes?: INode[];
   label?: string;

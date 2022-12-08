@@ -1,11 +1,17 @@
 import { set } from 'lodash-es';
-import { memo, useMemo, useState } from 'react';
+import { InputHTMLAttributes, memo, useMemo, useState } from 'react';
 import ConvertNodeToTags from '../../1_molecules/convertNodeToTags';
 import useStyles from '../hooks/useStyles';
 import { useServerData } from '../store/useServerData';
 import { INode, ISubNode } from '../types/dataType';
 
-function InputField({ node, nodePath }: { node: ISubNode; nodePath: { obj: object; path: string } }) {
+function InputField({
+  node,
+  nodePath,
+}: {
+  node: ISubNode & InputHTMLAttributes<HTMLInputElement>;
+  nodePath: { obj: object; path: string };
+}) {
   const { styleClassNames, styleInString } = useStyles({ node });
   const setServerData = useServerData((state) => state.setServerData);
   // const setUniqueIdStore = useUniqueIdStore((state) => state.setUniqueIdStore);
@@ -96,13 +102,22 @@ function InputField({ node, nodePath }: { node: ISubNode; nodePath: { obj: objec
         `}</style>
       }
 
-      {node?.label && !isLabelImp && <label htmlFor={`${node.id}`}>{node.label}</label>}
+      {node?.label && !isLabelImp && (
+        <label
+          htmlFor={`${node.id}`}
+          className={
+            otherInputProps['required'] === 'true' ? "after:content-['*'] after:ml-0.5 after:text-red-500" : ''
+          }
+        >
+          {node.label}
+        </label>
+      )}
 
       <CustomHtmlTag
         {...otherInputProps}
         id={`${node.id}`}
-        className={`${styleClassNames}`}
-        placeholder={node.placeHolderText || node.label}
+        className={`${styleClassNames} peer`}
+        placeholder={node?.placeHolderText || node?.placeholder}
         style={node.style}
         type={inputType}
         value={data.value}
@@ -111,6 +126,12 @@ function InputField({ node, nodePath }: { node: ISubNode; nodePath: { obj: objec
           setServerData(set(nodePath.obj, `${nodePath.path}.node.data.value`, e.target.value));
         }}
       />
+
+      {node?.errorLabel && node?.errorLabel.length > 0 && (
+        <span className='transition-all peer-invalid:visible peer-focus-within:!invisible peer-placeholder-shown:!invisible invisible font-semibold text-red-700 '>
+          {node?.errorLabel}
+        </span>
+      )}
 
       {node?.label && isLabelImp && (
         <label className='select-none' htmlFor={`${node.id}`}>
