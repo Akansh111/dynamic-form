@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { IJsonData } from '../../components/0_atoms/types/dataType';
+import chiefImg from './chief.png';
 
 export const oldJSON = {
   workflowId: '7561491',
@@ -334,6 +335,250 @@ export const newJSON = {
   previousTaskId: '1982165',
   nextTaskRef: '4511525',
   nodes: [
+    {
+      node: {
+        type: 'customTag-div',
+        id: 'customID-1',
+        style: {
+          'background-color': '#f5f5f5',
+          'border-radius': '1rem',
+          border: '1px solid #e0e0e0',
+          margin: '0px auto',
+          padding: '10px 20px',
+          color: '#a293cb',
+          width: '300px',
+          display: 'flex',
+          'flex-direction': 'column',
+        },
+        childNodes: [
+          {
+            node: {
+              type: 'customTag-h3',
+              id: 'customID-2',
+              style: {
+                color: '#7b57e2',
+                margin: '0px !important',
+                'text-align': 'center',
+              },
+              data: {
+                value: 'Contractors',
+              },
+            },
+          },
+          {
+            node: {
+              type: 'customTag-h4',
+              id: 'customID-3',
+              style: {
+                color: '#a5a5a5',
+                margin: '0px !important',
+                'text-align': 'center',
+              },
+              data: {
+                value: 'Commercial & Residential',
+              },
+            },
+          },
+          {
+            node: {
+              type: 'customTag-img',
+              id: 'customID-4',
+              style: {
+                color: '#a5a5a5',
+                margin: '1rem auto !important',
+                'text-align': 'center',
+              },
+              closedTag: 'true',
+              src: chiefImg.src,
+              data: {
+                value: '',
+              },
+            },
+          },
+          {
+            node: {
+              type: 'customTag-h3',
+              id: 'customID-5',
+              style: {
+                color: '#303039',
+                margin: '0px !important',
+                'text-align': 'center',
+              },
+              data: {
+                value: 'Service. Projects',
+              },
+            },
+          },
+          {
+            node: {
+              type: 'customTag-div',
+              id: 'customID-6',
+              style: {
+                margin: '0px !important',
+                padding: '10px 20px',
+                display: 'flex',
+                'flex-wrap': 'wrap',
+                gap: '8px',
+              },
+              childNodes: [
+                {
+                  node: {
+                    type: 'customTag-span',
+                    id: 'customID-7',
+                    style: {
+                      'background-color': '#c6eac0',
+                      color: '#303039',
+                      'border-radius': '1rem',
+                      padding: '0px 10px 2px 10px',
+                      'font-weight': '600',
+                      'font-size': '12px !important',
+                    },
+                    data: {
+                      value: 'Electrician',
+                    },
+                  },
+                },
+                {
+                  node: {
+                    type: 'customTag-span',
+                    id: 'customID-8',
+                    style: {
+                      'background-color': '#c6eac0',
+                      color: '#303039',
+                      'border-radius': '1rem',
+                      padding: '0px 10px 2px 10px',
+                      'font-weight': '600',
+                      'font-size': '12px !important',
+                    },
+                    data: {
+                      value: 'Plumber',
+                    },
+                  },
+                },
+                {
+                  node: {
+                    type: 'customTag-span',
+                    id: 'customID-9',
+                    style: {
+                      'background-color': '#c6eac0',
+                      color: '#303039',
+                      'border-radius': '1rem',
+                      padding: '0px 10px 2px 10px',
+                      'font-weight': '600',
+                      'font-size': '12px !important',
+                    },
+                    data: {
+                      value: 'HVAC',
+                    },
+                  },
+                },
+                {
+                  node: {
+                    type: 'customTag-span',
+                    id: 'customID-10',
+                    style: {
+                      'background-color': '#c6eac0',
+                      color: '#303039',
+                      'border-radius': '1rem',
+                      padding: '0px 10px 2px 10px',
+                      'font-weight': '600',
+                      'font-size': '12px !important',
+                    },
+                    data: {
+                      value: 'Carpenter',
+                    },
+                  },
+                },
+                {
+                  node: {
+                    type: 'customTag-span',
+                    id: 'customID-11',
+                    style: {
+                      'background-color': '#c6eac0',
+                      color: '#303039',
+                      'border-radius': '1rem',
+                      padding: '0px 10px 2px 10px',
+                      'font-weight': '600',
+                      'font-size': '12px !important',
+                    },
+                    data: {
+                      value: 'Conncrete',
+                    },
+                  },
+                },
+                {
+                  node: {
+                    type: 'customTag-span',
+                    id: 'customID-12',
+                    style: {
+                      'background-color': '#c6eac0',
+                      color: '#303039',
+                      'border-radius': '1rem',
+                      padding: '0px 10px 2px 10px',
+                      'font-weight': '600',
+                      'font-size': '12px !important',
+                    },
+                    data: {
+                      value: 'Builder',
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          {
+            node: {
+              type: 'customTag-button',
+              id: 'customID-13',
+              style: {
+                'text-decoration': 'underline',
+                color: '#7b43fb',
+                margin: '0px auto !important',
+                'font-weight': '600',
+                'font-size': '12px !important',
+              },
+              data: {
+                value: 'View all',
+              },
+            },
+          },
+          {
+            node: {
+              type: 'customTag-button',
+              id: 'customID-14',
+              style: {
+                'background-color': '#7b43fb',
+                color: '#fff',
+                width: '70%',
+                'border-radius': '0.25rem',
+                'font-weight': '600',
+                'font-size': '16px !important',
+                margin: '1rem auto !important',
+                padding: '0.5rem 0rem !important',
+              },
+              data: {
+                value: 'Search Contractors',
+              },
+            },
+          },
+          {
+            node: {
+              type: 'customTag-button',
+              id: 'customID-14',
+              style: {
+                color: '#7b43fb',
+                margin: '0px auto !important',
+                'font-weight': '600',
+                'font-size': '12px !important',
+              },
+              data: {
+                value: 'Join as a Contractor',
+              },
+            },
+          },
+        ],
+      },
+    },
     {
       node: {
         appearanceIndex: '1',

@@ -31,6 +31,7 @@ export interface ISubNode {
   label?: string;
   format?: string;
   readOnly?: string;
+  closedTag?: string;
   style?: {
     'Bold '?: string;
     'Italic '?: string;

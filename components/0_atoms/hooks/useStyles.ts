@@ -20,9 +20,9 @@ export default function useStyles({ node }: { node: ISubNode }) {
         styleInString += `${key[0]}: ${key[1]};`;
       }
     });
-    styleInString = (styleInString as string).replace('fontSize', 'font-size');
-    styleInString = (styleInString as string).replace('fontName', 'font-family');
-    styleInString = (styleInString as string).replace('Times New Roman', '"Times New Roman", Times, serif');
+    styleInString = styleInString.replaceAll('fontSize', 'font-size');
+    styleInString = styleInString.replaceAll('fontName', 'font-family');
+    styleInString = styleInString.replaceAll('Times New Roman', '"Times New Roman", Times, serif');
 
     return {
       styleClassNames,

@@ -37,21 +37,26 @@ function CustomField({ node, nodePath }: { node: ISubNode; nodePath: { obj: obje
           ${styleInString}
         }
       `}</style>
-      <CustomTag {...otherInputProps} className={`${styleClassNames}`}>
-        {node.data?.value ? node.data?.value : ''}
-        {node.childNodes &&
-          node.childNodes.length > 0 &&
-          node.childNodes.map((childNode: INode, key: number) => (
-            <ConvertNodeToTags
-              nodeData={childNode}
-              nodePath={{
-                obj: nodePath.obj,
-                path: `${nodePath.path}.node.childNodes[${key}]`,
-              }}
-              key={key}
-            />
-          ))}
-      </CustomTag>
+
+      {node?.closedTag && node?.closedTag === 'true' ? (
+        <CustomTag {...otherInputProps} className={`${styleClassNames}`} />
+      ) : (
+        <CustomTag {...otherInputProps} className={`${styleClassNames}`}>
+          {node.data?.value ? node.data?.value : ''}
+          {node.childNodes &&
+            node.childNodes.length > 0 &&
+            node.childNodes.map((childNode: INode, key: number) => (
+              <ConvertNodeToTags
+                nodeData={childNode}
+                nodePath={{
+                  obj: nodePath.obj,
+                  path: `${nodePath.path}.node.childNodes[${key}]`,
+                }}
+                key={key}
+              />
+            ))}
+        </CustomTag>
+      )}
     </>
   );
 }
