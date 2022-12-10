@@ -27,7 +27,7 @@ function JsonDisplay() {
   }
 
   return (
-    <div className='relative mx-auto prose'>
+    <div className='max-w-screen relative w-full mx-auto prose'>
       <pre>{JSON.stringify(serverData, null, 2)}</pre>
 
       {/* Button to copy above serverData into clipboard */}

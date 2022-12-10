@@ -18,7 +18,7 @@ function CreateForm() {
 
   return (
     formData && (
-      <div className='mx-auto prose'>
+      <div className='max-w-screen w-full mx-auto prose'>
         <form>
           <h1>{formData.taskName}</h1>
           <h3>{formData.taskDescription}</h3>
