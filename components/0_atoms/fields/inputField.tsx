@@ -38,7 +38,7 @@ function InputField({
   const convertInputAttributesToHtmlAttributes = useMemo(() => {
     let otherInputProps: any = {};
 
-    if (node?.attributes !== 'true') {
+    if (node?.attributes === 'false') {
       return otherInputProps;
     }
 

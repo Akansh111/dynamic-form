@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { IJsonData } from '../../components/0_atoms/types/dataType';
+import { IJsonData, INode } from '../../components/0_atoms/types/dataType';
 import chiefImg from './chief.png';
 
 export const oldJSON = {
@@ -325,7 +325,7 @@ export const oldJSON = {
   ],
 };
 
-const camelCaseAttributes = {
+export const camelCaseAttributes = {
   node: {
     appearanceIndex: '1',
     id: '9zx87cv98z7xc9v879',
@@ -365,7 +365,6 @@ const camelCaseAttributes = {
     ariaInvalid: 'false',
     ariaRequired: 'false',
     ariaChecked: 'false',
-    ariaPressed: 'false',
     ariaExpanded: 'false',
     ariaLevel: 'false',
     ariaMultiSelectable: 'false',
@@ -375,7 +374,6 @@ const camelCaseAttributes = {
     ariaOrientation: 'false',
     ariaGrabbed: 'false',
     ariaActiveDescendant: 'false',
-    autoFocus: 'false',
     autoCapitalize: 'false',
     autoCorrect: 'false',
     autoSave: 'false',
@@ -394,7 +392,7 @@ const camelCaseAttributes = {
   },
 };
 
-const normalAttributes = {
+export const normalAttributes = {
   // Converting the above cameCaseAttributes variable to normally used html attributes
   node: {
     appearanceIndex: '1',
@@ -449,7 +447,6 @@ const normalAttributes = {
     'aria-invalid': 'false',
     'aria-required': 'false',
     'aria-checked': 'false',
-    'aria-pressed': 'false',
     'aria-expanded': 'false',
     'aria-level': 'false',
     'aria-multiselectable': 'false',
@@ -459,11 +456,26 @@ const normalAttributes = {
     'aria-orientation': 'false',
     'aria-grabbed': 'false',
     'aria-activedescendant': 'false',
-    autofocus: 'false',
     autocapitalize: 'false',
     autocomplete: 'false',
     autosave: 'false',
   },
+};
+
+export const getRepeatedNodes = (node: INode, count: number) => {
+  const result = {
+    node: {
+      appearanceIndex: '4',
+      type: 'Group',
+      id: '6z5xc46v4zx65cv465z4xcv',
+      minInstance: '1',
+      maxInstance: '3',
+      groupLabel: 'Value Nodes with many attributes',
+      childNodes: [...Array(parseInt(count)).fill(node)],
+    },
+  };
+  console.log(result, count, node);
+  return result;
 };
 
 export const newJSON = {
@@ -1562,17 +1574,6 @@ export const newJSON = {
             },
           },
         ],
-      },
-    },
-    {
-      node: {
-        appearanceIndex: '4',
-        type: 'Group',
-        id: '6z5xc46v4zx65cv465z4xcv',
-        minInstance: '1',
-        maxInstance: '3',
-        groupLabel: 'Value Nodes with many attributes',
-        childNodes: [...Array(3000).fill(camelCaseAttributes)],
       },
     },
   ],

@@ -1,11 +1,9 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { useFormData } from '../../0_atoms/store/useFormData';
-import { useServerData } from '../../0_atoms/store/useServerData';
 import ConvertNodeToTags from '../../1_molecules/convertNodeToTags';
 
-function CreateForm() {
-  const { formData, setFormData } = useFormData();
-  const setServerData = useServerData((state) => state.setServerData);
+function CreateForm({ setRenderedTimeStamp }: any) {
+  const formData = useFormData((s) => s.formData);
 
   // useLayoutEffect(() => {
   //   const a = async () => {
@@ -15,6 +13,12 @@ function CreateForm() {
   //   };
   //   a();
   // }, []);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setRenderedTimeStamp(`${new Date().getTime()}`);
+      console.timeLog();
+    }
+  }, []);
 
   return (
     formData && (
