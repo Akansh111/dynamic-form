@@ -342,7 +342,6 @@ export const camelCaseAttributes = {
     color: 'false',
     dir: 'false',
     draggable: 'false',
-    inputMode: 'true',
     spellCheck: 'false',
     tabIndex: 'false',
     title: 'false',
@@ -471,7 +470,7 @@ export const getRepeatedNodes = (node: INode, count: number) => {
       minInstance: '1',
       maxInstance: '3',
       groupLabel: 'Value Nodes with many attributes',
-      childNodes: [...Array(parseInt(count)).fill(node)],
+      childNodes: [...Array(parseInt(count)).fill(JSON.parse(JSON.stringify(node)))],
     },
   };
   console.log(result, count, node);
@@ -736,7 +735,7 @@ export const newJSON = {
       node: {
         appearanceIndex: '1',
         type: 'Group',
-        id: '987987987979798798',
+        id: 'a0usdfas09d8f',
         minInstance: '1',
         maxInstance: '1',
         groupLabel: 'Please Enter your name',
@@ -744,7 +743,7 @@ export const newJSON = {
           {
             node: {
               appearanceIndex: '2',
-              id: '6a65sfd465a4sd',
+              id: 'aasd9f09asd8f90',
               type: 'valueNode',
               label: 'Enter your Name (min 3 and max 30 characters only)',
               placeHolderText: 'e.g. Akansh Goel',
@@ -1292,7 +1291,7 @@ export const newJSON = {
     {
       node: {
         appearanceIndex: '2',
-        id: 'q87ewr98qw7er987q9we',
+        id: 'aasdfasdf',
         type: 'Date',
         label: 'Date of Birth',
         format: 'dd-mm-yyyy',

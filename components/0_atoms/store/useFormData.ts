@@ -8,14 +8,18 @@ interface IFormDataState {
   setFormData: (d: any) => void;
 }
 
+const _formData = {
+  ...newJSON,
+  nodes: [
+    ...newJSON.nodes,
+    JSON.parse(
+      JSON.stringify(getRepeatedNodes(useSettings.getState().settings.nodeType, useSettings.getState().settings.count)),
+    ),
+  ],
+};
+
 const useFormData = create<IFormDataState>()((set) => ({
-  formData: {
-    ...newJSON,
-    nodes: [
-      ...newJSON.nodes,
-      getRepeatedNodes(useSettings.getState().settings.nodeType, useSettings.getState().settings.count),
-    ],
-  },
+  formData: _formData,
   setFormData: (d) => set((state) => ({ ...state, formData: { ...state.formData, ...d } })),
 }));
 

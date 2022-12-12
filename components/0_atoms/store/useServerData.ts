@@ -8,14 +8,18 @@ interface IServerDataState {
   setServerData: (d: any) => void;
 }
 
+const _serverData = {
+  ...newJSON,
+  nodes: [
+    ...newJSON.nodes,
+    JSON.parse(
+      JSON.stringify(getRepeatedNodes(useSettings.getState().settings.nodeType, useSettings.getState().settings.count)),
+    ),
+  ],
+};
+
 const useServerData = create<IServerDataState>()((set) => ({
-  serverData: {
-    ...newJSON,
-    nodes: [
-      ...newJSON.nodes,
-      getRepeatedNodes(useSettings.getState().settings.nodeType, useSettings.getState().settings.count),
-    ],
-  },
+  serverData: _serverData,
   setServerData: (d) => set((state) => ({ ...state, serverData: { ...state.serverData, ...d } })),
 }));
 
