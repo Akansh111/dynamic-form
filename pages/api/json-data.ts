@@ -1577,6 +1577,196 @@ export const newJSON = {
     },
   ],
 };
+
+export const json_0 = {
+  workflowId: '7561491',
+  taskId: '0',
+  userId: '5505194',
+  taskName: 'GYM Registration Form (1/3)',
+  taskDescription: 'Please enter your personal information to register',
+  version: '1.0',
+  previousTaskId: '',
+  nextTaskRef: '1',
+  nodes: [
+    {
+      node: {
+        appearanceIndex: '1',
+        type: 'Group',
+        id: '0ed95d90-1955-48d6-831a-bbfadcfdde49',
+        minInstance: '1',
+        maxInstance: '1',
+        groupLabel: 'Name Information',
+        childNodes: [
+          {
+            node: {
+              appearanceIndex: '2',
+              id: '5a00c51d-f1b2-4717-8775-76d98f1b7a87',
+              type: 'valueNode',
+              label: 'First Name',
+              minLength: '3',
+              maxLength: '30',
+              placeHolderText: 'Enter First name here',
+              required: 'true',
+              errorLabel: 'Please enter a valid first name',
+              style: {
+                'Bold ': 'false',
+                'Italic ': 'false',
+                underline: 'false',
+                fontSize: '14',
+                fontName: 'Times New Roman',
+                cssStyle: 'None',
+              },
+              data: {
+                value: '',
+              },
+            },
+          },
+          {
+            node: {
+              appearanceIndex: '2',
+              id: '61a08ea1-ffb2-47d4-990f-ae66eacb6c88',
+              type: 'valueNode',
+              label: 'Last Name',
+              minLength: '3',
+              maxLength: '30',
+              placeHolderText: 'Enter Last name here',
+              required: 'true',
+              errorLabel: 'Please enter a valid last name',
+              readOnly: 'false',
+              style: {
+                'Bold ': 'false',
+                'Italic ': 'false',
+                underline: 'false',
+                fontSize: '14',
+                fontName: 'Times New Roman',
+                cssStyle: 'None',
+              },
+              data: {
+                value: '',
+              },
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+export const json_1 = {
+  workflowId: '7561491',
+  taskId: '1',
+  userId: '5505194',
+  taskName: 'GYM Registration Form (2/3)',
+  taskDescription: 'Please enter your BMI information to register',
+  version: '1.0',
+  previousTaskId: '0',
+  nextTaskRef: '2',
+  nodes: [
+    {
+      node: {
+        appearanceIndex: '1',
+        type: 'Group',
+        id: '0ed95d90-1955-48d6-831a-bbfadcfdde49',
+        minInstance: '1',
+        maxInstance: '1',
+        groupLabel: 'Fitness Information',
+        childNodes: [
+          {
+            node: {
+              appearanceIndex: '2',
+              id: '5a00c51d-f1b2-4717-8775-76d98f1b7a87',
+              type: 'number',
+              label: 'Weight (kg)',
+              min: '20',
+              max: '300',
+              placeHolderText: 'Enter Weight here',
+              required: 'true',
+              errorLabel: 'Your weight must be between 20kg and 300kg',
+              style: {},
+              data: {
+                value: '',
+              },
+            },
+          },
+          {
+            node: {
+              appearanceIndex: '2',
+              id: '61a08ea1-ffb2-47d4-990f-ae66eacb6c88',
+              type: 'number',
+              label: 'Height (cm)',
+              min: '100',
+              max: '300',
+              placeHolderText: 'Enter Height here',
+              required: 'true',
+              errorLabel: 'Your height must be between 100cm and 300cm',
+              readOnly: 'false',
+              style: {
+                'Bold ': 'false',
+                'Italic ': 'false',
+                underline: 'false',
+                fontSize: '14',
+                fontName: 'Times New Roman',
+                cssStyle: 'None',
+              },
+              data: {
+                value: '',
+              },
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+export const json_2 = {
+  workflowId: '7561491',
+  taskId: '2',
+  userId: '5505194',
+  taskName: 'GYM Registration Form (3/3)',
+  taskDescription: 'Last step to register',
+  version: '1.0',
+  previousTaskId: '1',
+  nextTaskRef: '',
+  nodes: [
+    {
+      node: {
+        appearanceIndex: '1',
+        type: 'Group',
+        id: 'a8s4df64aasdfsd6f5',
+        minInstance: '1',
+        maxInstance: '1',
+        groupLabel: 'Choose a plan',
+        childNodes: [
+          {
+            node: {
+              appearanceIndex: '2',
+
+              id: '5a00c51d-f1b2-4717-8775-76d98f1b7a87',
+              type: 'valueNode',
+              label: 'Plan',
+              minLength: '3',
+              maxLength: '30',
+              placeHolderText: 'Enter Plan here',
+              required: 'true',
+              errorLabel: 'Please enter a valid plan',
+              style: {
+                'Bold ': 'false',
+                'Italic ': 'false',
+                underline: 'false',
+                fontSize: '14',
+                fontName: 'Times New Roman',
+                cssStyle: 'None',
+              },
+              data: {
+                value: '',
+              },
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+
 export default function handler(req: NextApiRequest, res: NextApiResponse<IJsonData>) {
   res.status(200).json(newJSON);
 }

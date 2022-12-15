@@ -2,7 +2,7 @@ import { memo, useEffect } from 'react';
 import { useFormData } from '../../0_atoms/store/useFormData';
 import ConvertNodeToTags from '../../1_molecules/convertNodeToTags';
 
-function CreateForm({ setRenderedTimeStamp }: any) {
+function CreateForm({ setRenderedTimeStamp }: { setRenderedTimeStamp?: (arg0: string) => void }) {
   const formData = useFormData((s) => s.formData);
 
   // useLayoutEffect(() => {
@@ -14,7 +14,7 @@ function CreateForm({ setRenderedTimeStamp }: any) {
   //   a();
   // }, []);
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && setRenderedTimeStamp) {
       setRenderedTimeStamp(`${new Date().getTime()}`);
       console.timeLog();
     }

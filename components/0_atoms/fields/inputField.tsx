@@ -138,7 +138,7 @@ function InputField({
       />
 
       {node?.errorLabel && node?.errorLabel.length > 0 && (
-        <span className='transition-all peer-invalid:visible peer-focus-within:!invisible peer-placeholder-shown:!invisible invisible font-semibold text-red-700 '>
+        <span className='transition-all peer-invalid:block peer-focus-within:!hidden peer-placeholder-shown:!hidden hidden font-semibold text-red-700 '>
           {node?.errorLabel}
         </span>
       )}
