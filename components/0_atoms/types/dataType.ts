@@ -1,13 +1,13 @@
 export interface IJsonData {
-  workflowId: string;
-  taskId: string;
-  userId: string;
-  taskName: string;
-  taskDescription: string;
-  version: string;
-  previousTaskId: string;
-  nextTaskRef: string;
-  nodes: INode[];
+  workflowId?: string;
+  taskId?: string;
+  userId?: string;
+  taskName?: string;
+  taskDescription?: string;
+  version?: string;
+  previousTaskId?: string;
+  nextTaskRef?: string;
+  nodes?: INode[];
 }
 
 export interface INode {
@@ -32,14 +32,16 @@ export interface ISubNode {
   format?: string;
   readOnly?: string;
   closedTag?: string;
-  style?: {
-    'Bold '?: string;
-    'Italic '?: string;
-    underline?: string;
-    fontSize?: string;
-    fontName?: string;
-    cssStyle?: string;
-  };
+  style?:
+    | {
+        'Bold '?: string;
+        'Italic '?: string;
+        underline?: string;
+        fontSize?: string;
+        fontName?: string;
+        cssStyle?: string;
+      }
+    | any;
   data?: {
     value: string;
   };

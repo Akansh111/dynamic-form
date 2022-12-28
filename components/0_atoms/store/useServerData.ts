@@ -1,21 +1,14 @@
 import create from 'zustand';
-import { getRepeatedNodes, newJSON } from '../../../pages/api/json-data';
 import { IJsonData } from '../types/dataType';
-import { useSettings } from './useSetting';
+import MAIN_JSON_DATA from './MAIN_JSON_DATA';
 
 interface IServerDataState {
-  serverData: null | IJsonData | typeof newJSON;
+  serverData: null | IJsonData | typeof MAIN_JSON_DATA;
   setServerData: (d: any) => void;
 }
 
 const _serverData = {
-  ...newJSON,
-  nodes: [
-    ...newJSON.nodes,
-    JSON.parse(
-      JSON.stringify(getRepeatedNodes(useSettings.getState().settings.nodeType, useSettings.getState().settings.count)),
-    ),
-  ],
+  ...MAIN_JSON_DATA,
 };
 
 const useServerData = create<IServerDataState>()((set) => ({

@@ -1,5 +1,4 @@
 import create from 'zustand';
-import { persist } from 'zustand/middleware';
 import { normalAttributes } from '../../../pages/api/json-data';
 
 interface IUniqueIdState {
@@ -11,18 +10,18 @@ interface IUniqueIdState {
 }
 
 const useSettings = create<IUniqueIdState>()(
-  persist(
-    (set) => ({
-      settings: {
-        nodeType: normalAttributes,
-        count: 10,
-      },
-      setSettings: (d) => set((state) => ({ ...state, settings: { ...state.settings, ...d } })),
-    }),
-    {
-      name: 'settings-storage',
+  // persist(
+  (set) => ({
+    settings: {
+      nodeType: normalAttributes,
+      count: 1,
     },
-  ),
+    setSettings: (d) => set((state) => ({ ...state, settings: { ...state.settings, ...d } })),
+  }),
+  //   {
+  //     name: 'settings-storage',
+  //   },
+  // ),
 );
 
 export { useSettings };

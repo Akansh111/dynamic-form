@@ -31,6 +31,7 @@ function CustomField({ node, nodePath }: { node: ISubNode; nodePath: { obj: obje
     delete props.readOnly;
     delete props.data;
     delete props.childNodes;
+    delete props.closedTag;
 
     return props;
   }, [node]);
@@ -39,15 +40,18 @@ function CustomField({ node, nodePath }: { node: ISubNode; nodePath: { obj: obje
     <>
       <style jsx>{`
         ${tag} {
-          ${styleInString}
+          ${styleInString};
+
+          grid-column: span ${node?.style?.gridColumn || '12'} / span ${node?.style?.gridColumn || '12'};
         }
       `}</style>
 
-      {node?.closedTag && node?.closedTag === 'true' ? (
+      {node?.closedTag || node?.closedTag === 'true' ? (
         <CustomTag {...otherInputProps} className={`${styleClassNames}`} />
       ) : (
         <CustomTag {...otherInputProps} className={`${styleClassNames}`}>
           {node.data?.value ? node.data?.value : ''}
+
           {node.childNodes &&
             node.childNodes.length > 0 &&
             node.childNodes.map((childNode: INode, key: number) => (

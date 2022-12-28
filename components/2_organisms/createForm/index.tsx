@@ -22,11 +22,11 @@ function CreateForm({ setRenderedTimeStamp }: { setRenderedTimeStamp?: (arg0: st
 
   return (
     formData && (
-      <div className='max-w-screen w-full mx-auto prose'>
+      <div className='w-full mx-auto prose'>
         <form>
           <h1>{formData.taskName}</h1>
           <h3>{formData.taskDescription}</h3>
-          <div className=''>
+          <div className='grid grid-cols-12'>
             {formData.nodes.map(
               (node, key) =>
                 node && (

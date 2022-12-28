@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.5",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "18.11.10",
     "@types/react": "18.0.25",
@@ -20,15 +21,20 @@
     "lodash-es": "^4.17.21",
     "next": "13.0.5",
     "react": "18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "18.2.0",
     "react-no-ssr": "^1.1.0",
     "react-select": "^5.7.0",
+    "tw-elements": "1.0.0-alpha13",
     "typescript": "4.9.3",
+    "uuid": "^9.0.0",
     "zustand": "^4.1.4"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.8",
+    "@types/uuid": "^9.0.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4"

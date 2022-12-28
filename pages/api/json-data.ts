@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { IJsonData, INode } from '../../components/0_atoms/types/dataType';
+import { INode } from '../../components/0_atoms/types/dataType';
 import chiefImg from './chief.png';
 
 export const oldJSON = {
@@ -494,6 +494,11 @@ export const newJSON = {
         style: {
           display: 'flex',
           'flex-direction': 'row',
+          // Shadow
+          'box-shadow': '0px 0px 10px 0px rgba(0,0,0,0.4)',
+          margin: '0px auto',
+          'border-radius': '20px',
+          overflow: 'hidden',
         },
         childNodes: [
           ...Array(4).fill({
@@ -502,9 +507,9 @@ export const newJSON = {
               id: 'customID-1',
               style: {
                 'background-color': '#f5f5f5',
-                'border-radius': '1rem',
+                'border-radius': '',
                 border: '1px solid #e0e0e0',
-                margin: '0px auto',
+                margin: '0px',
                 padding: '10px 20px',
                 color: '#a293cb',
                 width: '300px',
@@ -592,7 +597,7 @@ export const newJSON = {
                             'border-radius': '1rem',
                             padding: '0px 10px 2px 10px',
                             'font-weight': '600',
-                            'font-size': '12px !important',
+                            'font-size': '24px !important',
                           },
                           data: {
                             value: 'Electrician',
@@ -1312,6 +1317,7 @@ export const newJSON = {
           'Bold ': 'false',
           'Italic ': 'false',
           fontSize: '14',
+          gridColumn: '6',
           fontName: 'Times New Roman',
           cssStyle: 'None',
         },
@@ -1431,7 +1437,7 @@ export const newJSON = {
         type: 'fieldset',
         id: 'a8s4df64aasdfsd6f5',
         minInstance: '1',
-        maxInstance: '1',
+        maxInstance: '5',
         groupLabel: 'field Set',
         childNodes: [
           {
@@ -1448,6 +1454,7 @@ export const newJSON = {
                 'Bold ': 'false',
                 'Italic ': 'false',
                 underline: 'false',
+                gridColumn: '6',
                 fontSize: '14',
                 fontName: 'Times New Roman',
                 cssStyle: 'None',
@@ -1471,6 +1478,7 @@ export const newJSON = {
                 'Bold ': 'false',
                 'Italic ': 'false',
                 underline: 'false',
+                gridColumn: '6',
                 fontSize: '14',
                 fontName: 'Times New Roman',
                 cssStyle: 'None',
@@ -1606,7 +1614,7 @@ export const json_0 = {
         type: 'Group',
         id: '0ed95d90-1955-48d6-831a-bbfadcfdde49',
         minInstance: '1',
-        maxInstance: '1',
+        maxInstance: '60',
         groupLabel: 'Name Information',
         childNodes: [
           {
@@ -1651,6 +1659,7 @@ export const json_0 = {
                 underline: 'false',
                 fontSize: '14',
                 fontName: 'Times New Roman',
+                gridColumn: '6',
               },
               data: {
                 value: '',
@@ -1778,6 +1787,419 @@ export const json_2 = {
   ],
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<IJsonData>) {
-  res.status(200).json(newJSON);
+export const home_depot_json = {
+  workflowId: '7561491',
+  taskId: '3604477',
+  userId: '5505194',
+  version: '1.0',
+  previousTaskId: '1982165',
+  nextTaskRef: '4511525',
+  style: {},
+  nodes: [
+    {
+      node: {
+        type: 'customTag-div',
+        id: 'customID-0',
+        style: {
+          gridColumn: '12',
+          display: 'grid',
+          'grid-gap': '24px',
+          'grid-template-columns': 'repeat(12, 1fr)',
+          padding: '36px',
+        },
+        childNodes: [
+          {
+            node: {
+              type: 'customTag-div',
+              id: 'customID-1',
+              style: {
+                gridColumn: '8',
+                'background-color': 'white',
+                padding: '24px',
+              },
+              childNodes: [
+                {
+                  node: {
+                    type: 'customTag-h2',
+                    style: {
+                      'font-size': '20px',
+                      margin: '0px',
+                      'font-family': 'helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif',
+                    },
+                    data: {
+                      value: 'Build Your Deck',
+                    },
+                  },
+                },
+                {
+                  node: {
+                    type: 'customTag-h3',
+                    style: {
+                      'font-size': '16px',
+                      'font-weight': '400',
+                      'font-family': 'helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif',
+                    },
+                    data: {
+                      value:
+                        "This tool will help you plan, estimate, and purchase all of the materials you need to resurface or build a deck. Whether your deck is getting old and you need to replace the surface with new deck boards, or you are building from scratch, we're here to help.",
+                    },
+                  },
+                },
+                {
+                  node: {
+                    type: 'customTag-section',
+                    style: {
+                      margin: '24px 0px',
+                    },
+                    childNodes: [
+                      {
+                        node: {
+                          type: 'customTag-h2',
+                          style: {
+                            display: 'inline-block',
+                            fontSize: '2.25em',
+                            color: 'var(--black)',
+                            'border-bottom': '2px solid orange',
+                            margin: '1.25rem 0px',
+                            'font-weight': '400',
+                          },
+                          data: {
+                            value: 'What Do You Need?',
+                          },
+                        },
+                      },
+
+                      {
+                        node: {
+                          type: 'customTag-div',
+                          style: {
+                            'font-size': '0.875em',
+                          },
+                          data: {
+                            value: 'Tell us every part of the project you need help with.',
+                          },
+                        },
+                      },
+
+                      {
+                        node: {
+                          type: 'customTag-div',
+                          style: {
+                            display: 'flex',
+                            'flex-direction': 'row',
+                            gap: '24px',
+                            'flex-wrap': 'wrap',
+                          },
+                          childNodes: [
+                            {
+                              node: {
+                                type: 'customTag-div',
+                                style: {
+                                  border: '1px solid #cccccc',
+                                  padding: '8px',
+                                  'border-radius': '4px',
+                                  width: '128px',
+                                },
+                                childNodes: [
+                                  {
+                                    node: {
+                                      type: 'customTag-img',
+                                      closedTag: 'true',
+                                      src: 'https://blinds.homedepot.com/product-images/42d9926b-8a14-eb11-9484-0a986990730e.png',
+                                      width: '110px',
+                                      height: '110px',
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-h4',
+                                      style: {
+                                        'font-weight': '400',
+                                        'text-align': 'center',
+                                      },
+                                      data: {
+                                        value: 'Surface',
+                                      },
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-div',
+                                      style: {
+                                        display: 'flex',
+                                        gap: '16px',
+                                      },
+                                      childNodes: [
+                                        {
+                                          node: {
+                                            id: 'checkbox-surface',
+                                            type: 'checkbox',
+                                          },
+                                        },
+                                        {
+                                          node: {
+                                            type: 'customTag-label',
+                                            htmlFor: 'checkbox-surface',
+                                            style: {
+                                              'user-select': 'none !important',
+                                              'font-size': '0.875em',
+                                            },
+                                            data: {
+                                              value: 'Select Item',
+                                            },
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+
+                            {
+                              node: {
+                                type: 'customTag-div',
+                                style: {
+                                  border: '1px solid #cccccc',
+                                  padding: '8px',
+                                  'border-radius': '4px',
+                                  width: '128px',
+                                },
+                                childNodes: [
+                                  {
+                                    node: {
+                                      type: 'customTag-img',
+                                      closedTag: 'true',
+                                      src: 'https://blinds.homedepot.com/product-images/a3d4329a-444f-ea11-947a-0a986990730e.jpg',
+                                      width: '110px',
+                                      height: '110px',
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-h4',
+                                      style: {
+                                        'font-weight': '400',
+                                        'text-align': 'center',
+                                      },
+                                      data: {
+                                        value: 'Railing',
+                                      },
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-div',
+                                      style: {
+                                        display: 'flex',
+                                        gap: '16px',
+                                      },
+                                      childNodes: [
+                                        {
+                                          node: {
+                                            id: 'checkbox-surface',
+                                            type: 'checkbox',
+                                          },
+                                        },
+                                        {
+                                          node: {
+                                            type: 'customTag-label',
+                                            htmlFor: 'checkbox-surface',
+                                            style: {
+                                              'user-select': 'none !important',
+                                              'font-size': '0.875em',
+                                            },
+                                            data: {
+                                              value: 'Select Item',
+                                            },
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+
+                            {
+                              node: {
+                                type: 'customTag-div',
+                                style: {
+                                  border: '1px solid #cccccc',
+                                  padding: '8px',
+                                  'border-radius': '4px',
+                                  width: '128px',
+                                },
+                                childNodes: [
+                                  {
+                                    node: {
+                                      type: 'customTag-img',
+                                      closedTag: 'true',
+                                      src: 'https://blinds.homedepot.com/product-images/85d3258b-bd59-eb11-9487-0a986990730e.jpg',
+                                      width: '110px',
+                                      height: '110px',
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-h4',
+                                      style: {
+                                        'font-weight': '400',
+                                        'text-align': 'center',
+                                      },
+                                      data: {
+                                        value: 'Stairs',
+                                      },
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-div',
+                                      style: {
+                                        display: 'flex',
+                                        gap: '16px',
+                                      },
+                                      childNodes: [
+                                        {
+                                          node: {
+                                            id: 'checkbox-surface',
+                                            type: 'checkbox',
+                                          },
+                                        },
+                                        {
+                                          node: {
+                                            type: 'customTag-label',
+                                            htmlFor: 'checkbox-surface',
+                                            style: {
+                                              'user-select': 'none !important',
+                                              'font-size': '0.875em',
+                                            },
+                                            data: {
+                                              value: 'Select Item',
+                                            },
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+
+                            {
+                              node: {
+                                type: 'customTag-div',
+                                style: {
+                                  border: '1px solid #cccccc',
+                                  padding: '8px',
+                                  'border-radius': '4px',
+                                  width: '128px',
+                                },
+                                childNodes: [
+                                  {
+                                    node: {
+                                      type: 'customTag-img',
+                                      closedTag: 'true',
+                                      src: 'https://blinds.homedepot.com/product-images/ac51ee38-bd59-eb11-9487-0a986990730e.jpg',
+                                      width: '110px',
+                                      height: '110px',
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-h4',
+                                      style: {
+                                        'font-weight': '400',
+                                        'text-align': 'center',
+                                      },
+                                      data: {
+                                        value: 'Substructure',
+                                      },
+                                    },
+                                  },
+                                  {
+                                    node: {
+                                      type: 'customTag-div',
+                                      style: {
+                                        display: 'flex',
+                                        gap: '16px',
+                                      },
+                                      childNodes: [
+                                        {
+                                          node: {
+                                            id: 'checkbox-surface',
+                                            type: 'checkbox',
+                                          },
+                                        },
+                                        {
+                                          node: {
+                                            type: 'customTag-label',
+                                            htmlFor: 'checkbox-surface',
+                                            style: {
+                                              'user-select': 'none !important',
+                                              'font-size': '0.875em',
+                                            },
+                                            data: {
+                                              value: 'Select Item',
+                                            },
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+
+          {
+            node: {
+              type: 'customTag-div',
+              id: 'customID-1',
+              style: {
+                gridColumn: '4',
+                'background-color': 'white',
+              },
+              data: {
+                value: 'Home Depot',
+              },
+            },
+          },
+
+          {
+            node: {
+              type: 'customTag-div',
+              id: 'customID-1',
+              style: {
+                gridColumn: '12',
+                position: 'absolute',
+                top: '0px',
+                left: '0px',
+                right: '0px',
+                'z-index': '-1',
+                width: '100%',
+                height: '200px',
+                'background-color': 'rgba(0, 0, 0, 0.5)',
+                'background-image':
+                  'url("https://blinds.homedepot.com/product-images/487410bc-f376-eb11-9489-0a986990730e.jpg")',
+              },
+              data: {},
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+
+export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+  res.status(200).json(home_depot_json);
 }

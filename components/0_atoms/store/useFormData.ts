@@ -1,25 +1,18 @@
 import { isEmpty } from 'lodash-es';
 import create from 'zustand';
-import { getRepeatedNodes, newJSON } from '../../../pages/api/json-data';
 import { IJsonData } from '../types/dataType';
+import MAIN_JSON_DATA from './MAIN_JSON_DATA';
 import { useServerData } from './useServerData';
-import { useSettings } from './useSetting';
 
 interface IFormDataState {
   allFormData: any;
-  formData: null | IJsonData | typeof newJSON;
+  formData: null | IJsonData | typeof MAIN_JSON_DATA;
   setFormData: (d: any) => void;
   addNewFormData: (d: any) => void;
 }
 
 const _formData = {
-  ...newJSON,
-  nodes: [
-    ...newJSON.nodes,
-    JSON.parse(
-      JSON.stringify(getRepeatedNodes(useSettings.getState().settings.nodeType, useSettings.getState().settings.count)),
-    ),
-  ],
+  ...MAIN_JSON_DATA,
 };
 
 const useFormData = create<IFormDataState>()((set) => ({

@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .prose {
-  @apply w-screen min-w-full;
+  @apply max-w-[100vw] px-4;
 }

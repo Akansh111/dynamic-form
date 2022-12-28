@@ -25,8 +25,6 @@ function InputField({
       switch (node.type) {
         case 'valueNode':
           return 'text';
-        case 'Number':
-          return 'number';
         default:
           return node.type.toLowerCase();
       }
@@ -100,17 +98,20 @@ function InputField({
   }, [node.type]);
 
   return (
-    <div className={`transition-all ${!isLabelImp ? 'flex flex-col' : ''}`}>
-      {
-        <style jsx>{`
-          input {
-            ${styleInString}
-          }
-          label {
-            ${styleInString}
-          }
-        `}</style>
-      }
+    <div
+      className={`transition-all ${!isLabelImp ? 'flex flex-col' : ''}`}
+      style={{
+        gridColumn: `span ${node?.style?.gridColumn || '12'} / span ${node?.style?.gridColumn || '12'}`,
+      }}
+    >
+      <style jsx>{`
+        input {
+          ${styleInString}
+        }
+        label {
+          ${styleInString}
+        }
+      `}</style>
 
       {node?.label && !isLabelImp && (
         <label
